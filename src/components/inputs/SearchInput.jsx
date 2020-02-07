@@ -7,10 +7,13 @@ const SearchInputWrapper = styled.div`
         border: none;
         border-radius: 2px;
         padding: 10px 20px;
+        font-size: 14px;
+        font-family: OpenSans Regular, sans-serif;
     }
     button{
         background: #cb202d;
         color: #fff;
+        font-size: 14px;
         font-family: OpenSans Regular, sans-serif;
         font-weight: bold;
         text-align: center;

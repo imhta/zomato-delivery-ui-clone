@@ -8,6 +8,9 @@ const LocationInputWrapper = styled.div`
         border-radius: 2px;
         padding: 10px 20px;
         margin: 0px 3px;
+        font-size: 14px;
+        font-family: OpenSans Regular, sans-serif;
+        font-weight: bold;
     }
 `
 
