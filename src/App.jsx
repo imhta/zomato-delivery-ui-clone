@@ -1,7 +1,10 @@
 import React from 'react';
+import { path } from './initialState'
+import goldLogo from './assets/images/logo/sticky_gold_logo.png'
 import Navbar from './components/Navbar'
 import GoldAlert from './components/styled-component/GoldAlert'
-import goldLogo from './assets/images/logo/sticky_gold_logo.png'
+import BreadCrumb from './components/styled-component/BreadCrumb'
+
 
 function App() {
   return (
@@ -11,6 +14,7 @@ function App() {
         content="Introducing Zomato Gold — An Exclusive Members Club."
         action={{ title: 'JOIN NOW', href: 'https://www.zomato.com/mumbai/gold' }} />
       <Navbar />
+      <BreadCrumb path={path}/>
     </div>
   );
 }
