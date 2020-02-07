@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import Container from './Container'
 
 const BreadCrumbWrapper = styled.div`
     display: flex;
@@ -25,18 +26,20 @@ const BreadCrumbWrapper = styled.div`
 
 function BreadCrumb({ path }) {
     return (
-        <BreadCrumbWrapper>
-            {path.map((pos, index) => (
-                <>
-                    <a href={pos.href} >
-                        {pos.title}
-                    </a>
-                    {index + 1 !== path.length
-                        ? <i class="material-icons">keyboard_arrow_right</i>
-                        : ''}
-                </>
-            ))}
-        </BreadCrumbWrapper>
+        <Container>
+            <BreadCrumbWrapper>
+                {path.map((pos, index) => (
+                    <>
+                        <a href={pos.href} >
+                            {pos.title}
+                        </a>
+                        {index + 1 !== path.length
+                            ? <i class="material-icons">keyboard_arrow_right</i>
+                            : ''}
+                    </>
+                ))}
+            </BreadCrumbWrapper>
+        </Container>
     )
 }
 
