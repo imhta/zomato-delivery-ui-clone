@@ -1,13 +1,15 @@
 import React from 'react'
-import styled from 'styled-components'
+import BottomNavbar from './BottomNavbar'
+import MainNavbar from './MainNavbar'
 
-const NavbarWrapper = styled.nav`
-    background-color: red;
-`;
-export default function Navbar() {
+
+function Navbar() {
     return (
-        <NavbarWrapper>
-            Zomato
-        </NavbarWrapper>
+        <>
+            <MainNavbar />
+            <BottomNavbar />
+        </>
     )
 }
+
+export default Navbar
