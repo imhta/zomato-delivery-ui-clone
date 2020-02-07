@@ -10,6 +10,10 @@ import GoldImg from '../assets/images/header_gold_icon.svg'
 
 const BottomNavbarWrapper = styled.nav`
     box-shadow: 0 3px 5px 0 rgba(0,0,0,.1);
+
+    @media (max-width: 600px) {
+        display: none;
+    }
 `
 const Child = styled.div`
     display: flex;
