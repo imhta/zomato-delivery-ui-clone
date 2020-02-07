@@ -4,7 +4,7 @@ import goldLogo from './assets/images/logo/sticky_gold_logo.png'
 import Navbar from './components/Navbar'
 import GoldAlert from './components/styled-component/GoldAlert'
 import BreadCrumb from './components/styled-component/BreadCrumb'
-
+import MainContainer from './components/MainContainer'
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
         action={{ title: 'JOIN NOW', href: 'https://www.zomato.com/mumbai/gold' }} />
       <Navbar />
       <BreadCrumb path={path}/>
+      <MainContainer />
     </div>
   );
 }
