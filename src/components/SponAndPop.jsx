@@ -1,16 +1,19 @@
-import React from 'react'
-import styled from 'styled-components'
-import mapPlaceholder from '../assets/images/search-map-placeholder.jpg'
+import React from 'react';
+import styled from 'styled-components';
+import mapPlaceholder from '../assets/images/search-map-placeholder.jpg';
+import { SAP } from '../initialState';
+import SAPCard from './styled-component/SAPCard';
+
 const SponAndPopWrapper = styled.aside`
-    p{
+    .mini-title{
         font-size: 8px;
         color: #aaa;
         letter-spacing: 1.2px;
         font-weight: bold;
         text-transform: uppercase;
     }
-`
-const  ViewInMap = styled.div`
+`;
+const ViewInMap = styled.div`
     width: 100%;
     height: 60px;
     background-image: url(${mapPlaceholder});
@@ -26,14 +29,21 @@ const  ViewInMap = styled.div`
     line-height: 60px;
     border: 1px solid #e7e7e7;
     cursor: pointer;
-`
+`;
 function SponAndPop() {
-    return (
-        <SponAndPopWrapper>
-            <ViewInMap><span>View search result on map</span></ViewInMap>
-            <p>sponsored & popular</p>
-        </SponAndPopWrapper>
-    )
+  const { deliveryRestaurants } = SAP;
+  return (
+    <SponAndPopWrapper>
+      <ViewInMap><span>View search result on map</span></ViewInMap>
+      <p className="mini-title">sponsored & popular</p>
+      <SAPCard
+        title={deliveryRestaurants.title}
+        subtitle={deliveryRestaurants.subtitle}
+        icon={deliveryRestaurants.icon}
+        hotels={deliveryRestaurants.hotels}
+      />
+    </SponAndPopWrapper>
+  );
 }
 
-export default SponAndPop
+export default SponAndPop;
