@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const LocationInputWrapper = styled.div`
     display: flex;
@@ -27,20 +27,20 @@ const LocationInputWrapper = styled.div`
     .material-icons.arrow{
         right: 10px;
     }
-`
+`;
 
 function LocationInput() {
-    return (
-        <LocationInputWrapper>
-            <i class="material-icons location">
-                location_on
-            </i>
-            <input type="text" value="Mumbai" readOnly />
-            <i class="material-icons arrow">
-                keyboard_arrow_down
-            </i>
-        </LocationInputWrapper>
-    )
+  return (
+    <LocationInputWrapper>
+      <i className="material-icons location">
+        location_on
+      </i>
+      <input type="text" value="Mumbai" readOnly />
+      <i className="material-icons arrow">
+        keyboard_arrow_down
+      </i>
+    </LocationInputWrapper>
+  );
 }
 
-export default LocationInput
+export default LocationInput;

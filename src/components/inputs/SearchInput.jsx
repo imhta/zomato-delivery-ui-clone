@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const SearchInputWrapper = styled.div`
     display: flex;
@@ -40,18 +40,18 @@ const SearchInputWrapper = styled.div`
         position: absolute;
         left: 5px;
     }
-`
+`;
 
 function SearchInput() {
-    return (
-        <SearchInputWrapper>
-            <i class="material-icons">
-                search
-            </i>
-            <input type="text" placeholder="Search for restaurant or cusisines..." />
-            <button>Search</button>
-        </SearchInputWrapper>
-    )
+  return (
+    <SearchInputWrapper>
+      <i className="material-icons">
+        search
+      </i>
+      <input type="text" placeholder="Search for restaurant or cusisines..." />
+      <button type="submit">Search</button>
+    </SearchInputWrapper>
+  );
 }
 
-export default SearchInput
+export default SearchInput;
