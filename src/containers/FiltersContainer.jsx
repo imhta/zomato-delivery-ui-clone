@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import CheckBox from './styled-component/CheckBox';
-import FilterList from './styled-component/FilterList';
+import CheckBox from '../components/styled-component/CheckBox';
+import FilterList from '../components/styled-component/FilterList';
 import { filterState } from '../initialState';
 
 const FiltersWrapper = styled.aside`
@@ -23,7 +23,7 @@ const FiltersWrapper = styled.aside`
 
 `;
 
-function Filters() {
+function FiltersContainer() {
   return (
     <FiltersWrapper>
       <h3>Filters</h3>
@@ -47,4 +47,4 @@ function Filters() {
   );
 }
 
-export default Filters;
+export default FiltersContainer;

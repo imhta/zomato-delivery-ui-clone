@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Container from './styled-component/Container';
-import Filters from './Filters';
-import SponAndPop from './SponAndPop';
+import Container from '../components/styled-component/Container';
+import FiltersContainer from './FiltersContainer';
+import SponAndPopContainer from './SponAndPopContainer';
 import RestaurantsContainer from './RestaurantsContainer';
 
 
@@ -26,9 +26,9 @@ function MainContainer() {
       </Container>
       <Container>
         <MainLayout>
-          <Filters />
+          <FiltersContainer />
           <RestaurantsContainer />
-          <SponAndPop />
+          <SponAndPopContainer />
         </MainLayout>
       </Container>
     </>

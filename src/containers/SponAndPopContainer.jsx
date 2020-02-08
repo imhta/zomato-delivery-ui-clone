@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import mapPlaceholder from '../assets/images/search-map-placeholder.jpg';
 import { SAP } from '../initialState';
-import SAPCard from './styled-component/SAPCard';
+import SAPCard from '../components/styled-component/SAPCard';
 
 const SponAndPopWrapper = styled.aside`
     .mini-title{
@@ -30,7 +30,7 @@ const ViewInMap = styled.div`
     border: 1px solid #e7e7e7;
     cursor: pointer;
 `;
-function SponAndPop() {
+function SponAndPopContainer() {
   const { deliveryRestaurants } = SAP;
   return (
     <SponAndPopWrapper>
@@ -46,4 +46,4 @@ function SponAndPop() {
   );
 }
 
-export default SponAndPop;
+export default SponAndPopContainer;
