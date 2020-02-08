@@ -30,7 +30,7 @@ const SAPCardWrapper = styled.section`
 
 const Layout = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 100px);
     grid-gap: 5px;
     padding-top: 10px;
 `;

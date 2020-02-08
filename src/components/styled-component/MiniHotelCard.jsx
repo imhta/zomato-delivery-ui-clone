@@ -8,8 +8,11 @@ const MiniHotelCardWrapper = styled.div`
 
 `;
 const ImageWrapper = styled.div`
+    width: 100%;
     position: relative;
     img{
+        width: 100%;
+        height: 90px;
         border-radius: 4px;
     }
     .rating{
