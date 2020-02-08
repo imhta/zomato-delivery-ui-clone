@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
-import PropTypes from 'prop-types'
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const LinkWithIcon = styled.a`
     align-items: center;
@@ -18,8 +18,8 @@ const LinkWithIcon = styled.a`
     }
 
     img{
-        height: ${(props) => props.iconSize &&  props.iconSize ? props.iconSize : '28px'};
-        width: ${(props) => props.iconSize &&  props.iconSize ? props.iconSize : '28px'};
+        height: ${(props) => (props.iconSize && props.iconSize ? props.iconSize : '28px')};
+        width: ${(props) => (props.iconSize && props.iconSize ? props.iconSize : '28px')};
     }
     span{
         padding: 0px 0px 0px 4px;
@@ -27,20 +27,26 @@ const LinkWithIcon = styled.a`
 `;
 
 function Link({ href, icon, title }) {
-    return (
-        <LinkWithIcon href={href} target="_" iconSize={icon && icon.size}>
-            {icon ? <img src={icon.url} alt={title} /> : ''}
-            <span>{title}</span>
-        </LinkWithIcon>
-    )
+  return (
+    <LinkWithIcon href={href} target="_" iconSize={icon && icon.size}>
+      {icon ? <img src={icon.url} alt={title} /> : ''}
+      <span>{title}</span>
+    </LinkWithIcon>
+  );
 }
 
+Link.defaultProps = {
+  icon: {
+    size: '',
+  },
+};
+
 Link.propTypes = {
-    href: PropTypes.string.isRequired,
-    icon: PropTypes.shape({
-        url: PropTypes.string.isRequired,
-        size: PropTypes.string
-    }),
-    title: PropTypes.string.isRequired,
-}
-export default Link
+  href: PropTypes.string.isRequired,
+  icon: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    size: PropTypes.string,
+  }),
+  title: PropTypes.string.isRequired,
+};
+export default Link;

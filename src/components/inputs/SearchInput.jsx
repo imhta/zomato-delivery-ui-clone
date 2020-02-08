@@ -49,7 +49,7 @@ function SearchInput() {
         search
       </i>
       <input type="text" placeholder="Search for restaurant or cusisines..." />
-      <button type="submit">Search</button>
+      <button type="button">Search</button>
     </SearchInputWrapper>
   );
 }

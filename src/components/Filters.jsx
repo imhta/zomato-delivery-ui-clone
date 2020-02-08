@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import CheckBox from './styled-component/CheckBox'
-import FilterList from './styled-component/FilterList'
-import { filterState } from '../initialState'
+import React from 'react';
+import styled from 'styled-components';
+import CheckBox from './styled-component/CheckBox';
+import FilterList from './styled-component/FilterList';
+import { filterState } from '../initialState';
 
 const FiltersWrapper = styled.aside`
     background-color: white;
@@ -21,28 +21,30 @@ const FiltersWrapper = styled.aside`
         border-bottom: 1px solid rgba(255,255,255,.1);
     }
 
-`
+`;
 
 function Filters() {
-    return (
-        <FiltersWrapper>
-            <h3>Filters</h3>
-            <section className="top-section">
-                <CheckBox title="Book a Table" /><hr/>
-                <CheckBox title="Zomato Gold Partner" /><hr/>
-                <CheckBox title="Order Food Online" />
-            </section>
-            <FilterList title="Sort by" items={filterState.sortBy}/>
-            <FilterList title="Category" items={filterState.category}/>
-            <FilterList title="Location" items={filterState.location}/>
-            <FilterList title="Cuisine" items={filterState.cuisine}/>
-            <FilterList title="Establishment Type" items={filterState.establishment}/>
-            <FilterList title="Cost for two" items={filterState.costForTwo}/>
-            <FilterList title="Restaurant Offers" checked checkItems={filterState.restaurantsOffer} />
-            <FilterList title="More filters" checked checkItems={filterState.moreFilters} />
+  return (
+    <FiltersWrapper>
+      <h3>Filters</h3>
+      <section className="top-section">
+        <CheckBox title="Book a Table" />
+        <hr />
+        <CheckBox title="Zomato Gold Partner" />
+        <hr />
+        <CheckBox title="Order Food Online" />
+      </section>
+      <FilterList title="Sort by" items={filterState.sortBy} />
+      <FilterList title="Category" items={filterState.category} />
+      <FilterList title="Location" items={filterState.location} />
+      <FilterList title="Cuisine" items={filterState.cuisine} />
+      <FilterList title="Establishment Type" items={filterState.establishment} />
+      <FilterList title="Cost for two" items={filterState.costForTwo} />
+      <FilterList title="Restaurant Offers" checked checkItems={filterState.restaurantsOffer} />
+      <FilterList title="More filters" checked checkItems={filterState.moreFilters} />
 
-        </FiltersWrapper>
-    )
+    </FiltersWrapper>
+  );
 }
 
-export default Filters
+export default Filters;

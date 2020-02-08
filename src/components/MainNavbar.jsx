@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
-import logo from '../assets/images/logo/zomato_white_logo_new.svg'
-import Container from './styled-component/Container'
-import LocationInput from './inputs/LocationInput'
-import SearchInput from './inputs/SearchInput'
+import React from 'react';
+import styled from 'styled-components';
+import logo from '../assets/images/logo/zomato_white_logo_new.svg';
+import Container from './styled-component/Container';
+import LocationInput from './inputs/LocationInput';
+import SearchInput from './inputs/SearchInput';
 
 const MainNavbarWrapper = styled.nav`
     background-color: #cb202d;
@@ -23,7 +23,7 @@ const SearchContainer = styled.div`
         display: none;
     }
 
-`
+`;
 
 
 const AccountContainer = styled.div`
@@ -49,24 +49,24 @@ const AccountContainer = styled.div`
             transition: .15s ease-out background-color;
         }
     
-`
+`;
 function MainNavbar() {
-    return (
-        <MainNavbarWrapper>
-            <Container>
-                <img src={logo} alt="zomato logo" />
-                <SearchContainer>
-                    <LocationInput />
-                    <SearchInput />
-                </SearchContainer>
+  return (
+    <MainNavbarWrapper>
+      <Container>
+        <img src={logo} alt="zomato logo" />
+        <SearchContainer>
+          <LocationInput />
+          <SearchInput />
+        </SearchContainer>
 
-                <AccountContainer>
-                    <button href="#" className="login">Log in</button>
-                    <button href="#" className="signup">Create an account</button>
-                </AccountContainer>
-            </Container>
-        </MainNavbarWrapper>
-    )
+        <AccountContainer>
+          <button type="button" href="https://zomato.com" className="login">Log in</button>
+          <button type="button" href="https://zomato.com" className="signup">Create an account</button>
+        </AccountContainer>
+      </Container>
+    </MainNavbarWrapper>
+  );
 }
 
-export default MainNavbar
+export default MainNavbar;
