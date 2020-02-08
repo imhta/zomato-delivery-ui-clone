@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import PropsType from 'prop-types'
-import closeIcon from '../../assets/images/cross.png'
+import React from 'react';
+import styled from 'styled-components';
+import PropsType from 'prop-types';
+import closeIcon from '../../assets/images/cross.png';
 
 const GoldAlertWrapper = styled.div`
     display: flex;
@@ -35,7 +35,7 @@ const GoldAlertWrapper = styled.div`
     @media (max-width: 700px){
         display: none;
     }
-`
+`;
 const Action = styled.a`
     margin-left: 10px;
     font-weight: bold;
@@ -43,7 +43,7 @@ const Action = styled.a`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     cursor: pointer;
-`
+`;
 const GoldLine = styled.div`
     height: 3px;
     background: radial-gradient(40% 50px at center,#A37320,#EFEA7E,#A37320);
@@ -51,30 +51,30 @@ const GoldLine = styled.div`
     @media (max-width: 700px){
         display: none;
     }
-`
+`;
 function GoldAlert({ icon, content, action }) {
-    return (
-        <>
-            <GoldAlertWrapper>
-                {icon ? <img src={icon} alt={content} /> : ''}
-                <p>{content}</p>
-                {action ? <Action href={action.href}>{action.title}</Action> : ''}
-                <button>
-                    <img src={closeIcon} alt="close alert" />
-                </button>
-            </GoldAlertWrapper>
-            <GoldLine></GoldLine>
-        </>
-    )
+  return (
+    <>
+      <GoldAlertWrapper>
+        {icon ? <img src={icon} alt={content} /> : ''}
+        <p>{content}</p>
+        {action ? <Action href={action.href}>{action.title}</Action> : ''}
+        <button>
+          <img src={closeIcon} alt="close alert" />
+        </button>
+      </GoldAlertWrapper>
+      <GoldLine />
+    </>
+  );
 }
 
 GoldAlert.propsType = {
-    icon: PropsType.string,
-    content: PropsType.string.isRequired,
-    action: PropsType.shape({
-        title: PropsType.string.isRequired,
-        href: PropsType.string.isRequired,
-    })
-}
+  icon: PropsType.string,
+  content: PropsType.string.isRequired,
+  action: PropsType.shape({
+    title: PropsType.string.isRequired,
+    href: PropsType.string.isRequired,
+  }),
+};
 
-export default GoldAlert
+export default GoldAlert;
