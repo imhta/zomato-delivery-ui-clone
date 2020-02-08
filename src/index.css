@@ -2,7 +2,12 @@
     font-family: OpenSans Regular;
     src: url(./assets/fonts/OpenSans-Regular.ttf);
 }
+@font-face {
+    font-family: 'OpenSans Bold';
+    src: url(./assets/fonts/OpenSans-Bold.ttf);
+}
 body {
     margin: 0;
     background-color: #F3F3F3;
+    font-family: OpenSans Regular;
 }
