@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
-import PropTypes from 'prop-types'
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const CheckBoxWrapper = styled.label`
     display: block;
@@ -54,20 +54,20 @@ const CheckBoxWrapper = styled.label`
         border-width: 0 3px 3px 0;
         transform: rotate(45deg);
     }
-`
+`;
 
 function CheckBox({ title }) {
-    return (
-        <CheckBoxWrapper>
-            {title}
-            <input type="checkbox" />
-            <span class="checkmark"></span>
-        </CheckBoxWrapper>
-    )
+  return (
+    <CheckBoxWrapper>
+      {title}
+      <input type="checkbox" />
+      <span className="checkmark" />
+    </CheckBoxWrapper>
+  );
 }
 
 CheckBox.propTypes = {
-    title: PropTypes.string.isRequired
-}
+  title: PropTypes.string.isRequired,
+};
 
-export default CheckBox
+export default CheckBox;

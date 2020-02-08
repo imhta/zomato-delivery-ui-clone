@@ -47,7 +47,7 @@ function SAPCard({
         <img src={icon} alt={title} width="44" height="44" />
       </header>
       <Layout>
-        {hotels.map((hotel) => (<MiniHotelCard hotel={hotel} />))}
+        {hotels.map((hotel, index) => (<MiniHotelCard key={hotel.title + index} hotel={hotel} />))}
       </Layout>
     </SAPCardWrapper>
   );

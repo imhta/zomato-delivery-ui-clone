@@ -1,13 +1,17 @@
-import React from 'react'
-import styled from 'styled-components'
-import PropTypes from 'prop-types'
-import Container from './Container'
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import Container from './Container';
 
 const BreadCrumbWrapper = styled.div`
     display: flex;
     align-items: center;
     padding: 10px;
     color: #89959B;
+    span{
+        display: flex;
+        align-items: center;
+    }
     a{
         text-decoration: none;
         font-family: 'Open Sans', sans-serif;
@@ -22,34 +26,34 @@ const BreadCrumbWrapper = styled.div`
     .material-icons{
         font-size:  15px; 
     }
-`
+`;
 
 function BreadCrumb({ path }) {
-    return (
-        <Container>
-            <BreadCrumbWrapper>
-                {path.map((pos, index) => (
-                    <>
-                        <a href={pos.href} >
-                            {pos.title}
-                        </a>
-                        {index + 1 !== path.length
-                            ? <i class="material-icons">keyboard_arrow_right</i>
-                            : ''}
-                    </>
-                ))}
-            </BreadCrumbWrapper>
-        </Container>
-    )
+  return (
+    <Container>
+      <BreadCrumbWrapper>
+        {path.map((pos, index) => (
+          <span key={pos.title + index}>
+            <a href={pos.href}>
+              {pos.title}
+            </a>
+            {index + 1 !== path.length
+              ? <i className="material-icons">keyboard_arrow_right</i>
+              : ''}
+          </span>
+        ))}
+      </BreadCrumbWrapper>
+    </Container>
+  );
 }
 
 BreadCrumb.propTypes = {
-    path: PropTypes.arrayOf(
-        PropTypes.shape({
-            title: PropTypes.string.isRequired,
-            href: PropTypes.string.isRequired,
-        })
-    ).isRequired
-}
+  path: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      href: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
 
-export default BreadCrumb
+export default BreadCrumb;
