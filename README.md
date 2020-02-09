@@ -1,7 +1,7 @@
 # Zomato-delivery-ui-clone
 Zomato mumbai food delivery page ui clone built using react (built for educational purpose only)
 
-## :fire: [Preview]()
+### :fire: [Preview]()
 ## Get Started
 
 > Clone the project 
