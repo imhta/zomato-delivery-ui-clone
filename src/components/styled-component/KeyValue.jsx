@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const KeyValueWrapper = styled.div`
    display: flex;
+   align-items: center;
   .left{
     width: 25%;
     text-transform: uppercase;
