@@ -258,4 +258,65 @@ const SAP = {
     ],
   },
 };
-export { path, filterState, SAP };
+const footerContent = {
+  aboutZomato: ['About Us', 'Culture',
+    'Blog',
+    'Careers',
+    'Contact'],
+  forFoodies: [
+    'Code of Conduct',
+    'Community',
+    'Verified Users',
+    'Blogger Help',
+    'Developers',
+    'Mobile Apps',
+  ],
+  forRestaurants: [
+    [
+      'Add a Restaurant',
+      'Claim your Listing',
+      'Business App',
+      'Business Owner ',
+      'Business Blog',
+      'Restaurant Widgets',
+      'Products for Businesses',
+    ],
+    ['Advertise',
+      'Order',
+      'Book',
+      'Trace',
+      'Hyperpure',
+
+    ],
+  ],
+  countries: [
+    'Australia',
+    'Brasil',
+    'Canada',
+    'Chile',
+    'Czech Republic',
+    'India',
+    'Indonesia',
+    'Ireland',
+    'Italy',
+    'Lebanon',
+    'Malaysia',
+    'New Zealand',
+    'Philippines',
+    'Poland',
+    'Portugal',
+    'Qatar',
+    'Singapore',
+    'Slovakia',
+    'South Africa',
+    'Sri Lanka',
+    'Turkey',
+    'UAE',
+    'United Kingdom',
+    'United States',
+  ],
+};
+
+export {
+  path, filterState, SAP, footerContent,
+};

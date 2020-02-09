@@ -5,6 +5,7 @@ import NavbarContainer from './containers/NavbarContainer';
 import GoldAlert from './components/styled-component/GoldAlert';
 import BreadCrumb from './components/styled-component/BreadCrumb';
 import MainContainer from './containers/MainContainer';
+import FooterContainer from './containers/FooterContainer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <NavbarContainer />
       <BreadCrumb path={path} />
       <MainContainer />
+      <FooterContainer />
     </div>
   );
 }
