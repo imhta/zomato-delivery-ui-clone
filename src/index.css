@@ -12,4 +12,6 @@ body {
     font-size: 15px;
     color: #33373D;
     font-family: OpenSans Regular;
+    width: 100vw;
+    overflow-x: hidden;
 }
