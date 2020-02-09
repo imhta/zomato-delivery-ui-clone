@@ -33,6 +33,9 @@ const HotelBody = styled.div`
         font-family: OpenSans Regular, sans-serif;
         color: #33373D;
         margin: 1px 0px 0px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
     span{
         font-size: 11px !important;
