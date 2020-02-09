@@ -6,7 +6,7 @@ import { filterState } from '../initialState';
 
 const FiltersWrapper = styled.aside`
     background-color: white;
-    margin: 1rem 0;
+    margin-bottom: 1rem;
     padding: 1em;
     border-radius: .28571429rem;
     border: 1px solid #e7e7e7;
