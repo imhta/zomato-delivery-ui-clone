@@ -20,7 +20,19 @@ const MainLayout = styled.main`
       grid-template-columns: 1fr;
     }
 `;
-
+const FinalNote = styled.div`
+  padding: 10px 10px 20px;
+  border-top: 1px solid #e7e7e7;
+  cursor: pointer;
+  p{
+    font-size: 14px;
+    color: #89959B;
+    margin: 0px;
+  }
+  ${Container} {
+    display: block;
+  }
+`;
 function MainContainer() {
   return (
     <>
@@ -34,6 +46,13 @@ function MainContainer() {
           <SponAndPopContainer />
         </MainLayout>
       </Container>
+      <FinalNote>
+        <Container>
+          <p>Frequent searches leading to this page</p>
+          <p>Delivery Restaurants in Mumbai</p>
+        </Container>
+      </FinalNote>
+
     </>
   );
 }
