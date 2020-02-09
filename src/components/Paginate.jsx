@@ -18,6 +18,13 @@ const PaginateWrapper = styled.div`
             background-color: white;
             border: 1px solid #e7e7e7
         }
+        li:hover{
+            cursor: pointer;
+            background-color: rgba(0,0,0,0.05)
+        }
+        .active{
+            background-color: rgba(0,0,0,0.05)
+        }
     }
 `;
 
