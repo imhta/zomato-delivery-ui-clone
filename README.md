@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4df80935-116b-4054-8713-de21b0625fdd/deploy-status)](https://app.netlify.com/sites/zomato-delivery/deploys)
 # Zomato-delivery-ui-clone
 Zomato mumbai food delivery page ui clone built using react (built for educational purpose only)
 
