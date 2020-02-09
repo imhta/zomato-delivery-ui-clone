@@ -28,6 +28,9 @@ const CardHeader = styled.div`
         height: 120px;
         padding-right: 10px;
     }
+    @media (max-width: 580px) {
+      display: block;
+    }
 `;
 
 const TitleWrapper = styled.div`

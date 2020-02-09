@@ -20,7 +20,9 @@ const FiltersWrapper = styled.aside`
         border-top: 1px solid #e7e7e7;
         border-bottom: 1px solid rgba(255,255,255,.1);
     }
-
+    @media (max-width: 1110px) {
+      display: none;
+    }
 `;
 
 function FiltersContainer() {

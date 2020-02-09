@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const PaginateWrapper = styled.div`
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-top: 25px;
     font-size: 14px;

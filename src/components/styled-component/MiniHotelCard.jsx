@@ -9,12 +9,11 @@ const MiniHotelCardWrapper = styled.div`
 `;
 const ImageWrapper = styled.div`
     width: 100%;
+    height: 90px;
     position: relative;
-    img{
-        width: 100%;
-        height: 90px;
-        border-radius: 4px;
-    }
+    background-image: url(${({ bgImg }) => bgImg});
+    background-size: cover;
+    border-radius: 4px;
     .rating{
         position: absolute;
         top: 0px;
@@ -50,8 +49,7 @@ function MiniHotelCard({
 }) {
   return (
     <MiniHotelCardWrapper>
-      <ImageWrapper>
-        <img src={image} alt={title} />
+      <ImageWrapper bgImg={image}>
         <div className="rating">
           <Rating mini rating={rating} />
         </div>

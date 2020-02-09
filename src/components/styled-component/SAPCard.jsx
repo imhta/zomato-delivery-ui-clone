@@ -33,6 +33,10 @@ const Layout = styled.div`
     grid-template-columns: repeat(3, 100px);
     grid-gap: 5px;
     padding-top: 10px;
+
+    @media (max-width: 1110px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
 `;
 function SAPCard({
   title, subtitle, icon, hotels,

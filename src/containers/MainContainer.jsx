@@ -16,6 +16,9 @@ const MainLayout = styled.main`
     width: 100%;
     grid-template-columns: 1fr 1fr .60fr;
 
+    @media (max-width: 1110px) {
+      grid-template-columns: 1fr;
+    }
 `;
 
 function MainContainer() {
