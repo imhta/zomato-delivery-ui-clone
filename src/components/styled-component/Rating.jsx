@@ -9,28 +9,39 @@ const getColorBasedOnRange = (rating) => {
   return '#CDD614';
 };
 const RatingWrapper = styled.div`
-    display:inline;
-    font-weight: bold;
-    color: white;
-    padding: 2px 5px;
-    border-radius: 4px;
-    background-color: ${(props) => getColorBasedOnRange(Number(props.rating))};
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: fit-content;
+    height: fit-content;
+    .rating-badge{
+
+        font-weight: bold;
+        color: white;
+        padding: 2px 5px;
+        border-radius: 4px;
+        background-color: ${(props) => getColorBasedOnRange(Number(props.rating))};
+    }
+
+    .votes{
+        float: right;
+        font-size: 12px;
+        color: #89959B;
+    }   
 
 `;
 function Rating({ mini, rating, votes }) {
   return (
-    <>
-      <RatingWrapper rating={rating}>
+    <RatingWrapper rating={rating}>
+      <div className="rating-badge">
         {rating}
-      </RatingWrapper>
+      </div>
       {!mini && votes ? (
-        <span className="voting">
-          {votes}
-          {' '}
-          votes
-        </span>
+        <div className="votes">
+          {`${votes} votes`}
+        </div>
       ) : ''}
-    </>
+    </RatingWrapper>
   );
 }
 Rating.defaultProps = {
