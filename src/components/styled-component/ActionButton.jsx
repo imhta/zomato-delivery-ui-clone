@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const ActionButtonWrapper = styled.button`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,8 +36,10 @@ const ActionButtonWrapper = styled.button`
 
   .offline-status{
     font-family: 'OpenSans Regular', sans-serif;
-    font-size: 12px;
-    color: #D3D3D3
+    font-size: 11px;
+    color: #D3D3D3;
+    position: absolute;
+    top: 32px;
   }
 
   `;

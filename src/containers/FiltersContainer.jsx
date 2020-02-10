@@ -10,6 +10,7 @@ const FiltersWrapper = styled.aside`
     padding: 1em;
     border-radius: .28571429rem;
     border: 1px solid #e7e7e7;
+    height: fit-content;
 
     h3{
         font-size: 17px;

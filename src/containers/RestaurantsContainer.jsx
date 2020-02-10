@@ -5,17 +5,14 @@ import Paginate from '../components/Paginate';
 import { restaurants } from '../initialState';
 
 const RestaurantsWrapper = styled.section`
-      margin: 0px 15px 15px 15px;
-
-      @media(max-width: 580px) {
-        margin: 0px;
-      }
 `;
 
 function RestaurantsContainer() {
   return (
     <RestaurantsWrapper>
-      {restaurants.map((restaurant) => (<RestaurantCard restaurant={restaurant} />))}
+      {restaurants.map((restaurant, index) => (
+        <RestaurantCard key={Math.random(index)} restaurant={restaurant} />
+      ))}
       <Paginate />
     </RestaurantsWrapper>
   );

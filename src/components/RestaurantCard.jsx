@@ -35,6 +35,7 @@ const CardHeader = styled.div`
 `;
 
 const TitleWrapper = styled.div`
+  flex: 1;
   address{
     max-width: 370px;
     font-size: 14px;
@@ -46,6 +47,7 @@ const TitleWrapper = styled.div`
   }
 `;
 const Title = styled.div`
+    width: 100%;
     display: flex;
     align-items: center;
     .title-content{
@@ -59,10 +61,13 @@ const Title = styled.div`
         color: #A28947;
       }
       .type{
-        font-size: 11px;
-        color: #89959B;
-        text-transform: uppercase;
-        letter-spacing: .01em;
+        span{
+          font-size: 11px;
+          color: #89959B;
+          text-transform: uppercase;
+          letter-spacing: .01em;
+        }
+
       }
       .hotel-name{
         color: #cb202d;
@@ -71,9 +76,11 @@ const Title = styled.div`
         line-height: 22px;
         margin: 5px;
       }
+      .min-loc{
+        font-family: 'OpenSans Bold', sans-serif;
+      }
     }
     .rating-wrapper {
-      max-width: 100%;
       display: flex;
       justify-content: flex-end;
     }
@@ -174,10 +181,10 @@ function RestaurantCard({
               <div className="title-content">
                 {isSponsored ? <p className="sponsored">SPONSORED</p> : ''}
                 <p className="type">
-                  {types.map((type) => (
-                    <span>
+                  {types.map((type, index) => (
+                    <span key={Math.random(index)}>
                       {type}
-                      ,
+                      {' '}
                     </span>
                   ))}
                 </p>
@@ -194,19 +201,26 @@ function RestaurantCard({
         <hr />
         <CardBody>
           {moreDetails
-            .map(({ key, value }) => (<KeyValue keyContent={key} valueContent={value} />))}
+            .map(({ key, value }, index) => (
+              <KeyValue
+                key={Math.random(index)}
+                keyContent={key}
+                valueContent={value}
+              />
+            ))}
         </CardBody>
       </div>
       <CardAction>
         {availableActions.map(({
           action, icon, textColor, bgColor, currentlyNotAvailable,
-        }) => (
+        }, index) => (
           <ActionButton
+            key={Math.random(index)}
             action={action}
             icon={icon}
-            textColor={textColor || null}
-            bgColor={bgColor || null}
-            currentlyNotAvailable={currentlyNotAvailable || false}
+            textColor={textColor}
+            bgColor={bgColor}
+            currentlyNotAvailable={currentlyNotAvailable}
           />
         ))}
 
@@ -220,8 +234,8 @@ function RestaurantCard({
               more outlets in Mumbai
             </p>
             <ul>
-              {outlets.map(({ location, outletImg }) => (
-                <li>
+              {outlets.map(({ location, outletImg }, index) => (
+                <li key={Math.random(index)}>
                   <img src={outletImg} alt={`${name + location}`} />
                   <div className="outlet-details">
                     <p className="outlet-title">{name}</p>
@@ -265,8 +279,8 @@ RestaurantCard.propTypes = {
       {
         action: PropTypes.string.isRequired,
         icon: PropTypes.string.isRequired,
-        textColor: PropTypes.string.isRequired,
-        bgColor: PropTypes.string.isRequired,
+        textColor: PropTypes.string,
+        bgColor: PropTypes.string,
         currentlyNotAvailable: PropTypes.bool,
       },
     ).isRequired).isRequired,

@@ -14,7 +14,8 @@ const MainHeader = styled.h1`
 const MainLayout = styled.main`
     display: grid;
     width: 100%;
-    grid-template-columns: 1fr 1fr .60fr;
+    grid-template-columns: .5fr 1fr .7fr;
+    grid-gap: 10px;
 
     @media (max-width: 1110px) {
       grid-template-columns: 1fr;

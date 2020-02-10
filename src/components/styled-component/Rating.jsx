@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 const getColorBasedOnRange = (rating) => {
   if (rating === 'NEW') return '#89959B';
-  if (rating >= 4.0) return '#5BA829';
-  if (rating >= 3.5) return '#9ACD32';
+  if (Number(rating) >= 4.0) return '#5BA829';
+  if (Number(rating) >= 3.5) return '#9ACD32';
   return '#CDD614';
 };
 const RatingWrapper = styled.div`
@@ -20,7 +20,7 @@ const RatingWrapper = styled.div`
         color: white;
         padding: 2px 5px;
         border-radius: 4px;
-        background-color: ${(props) => getColorBasedOnRange(Number(props.rating))};
+        background-color: ${(props) => getColorBasedOnRange(props.rating)};
     }
 
     .votes{
