@@ -220,7 +220,7 @@ const SAP = {
   deliveryRestaurants: {
     title: 'Delivery Restaurants',
     subtitle: 'Get food delivered',
-    icon: dineOutIcon,
+    icon: deliveryRestaurantsIcon,
     hotels: [
       {
         title: 'Meraki',
