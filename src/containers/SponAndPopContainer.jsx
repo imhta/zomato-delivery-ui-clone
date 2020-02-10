@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import mapPlaceholder from '../assets/images/search-map-placeholder.jpg';
 import { SAP } from '../initialState';
-import SAPCard from '../components/styled-component/SAPCard';
+import SAPCard from '../components/SAPCard';
 
 const SponAndPopWrapper = styled.aside`
     .mini-title{

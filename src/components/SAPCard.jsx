@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import MiniHotelCard from './MiniHotelCard';
+import MiniHotelCard from './styled-component/MiniHotelCard';
 
 const SAPCardWrapper = styled.section`
     border-radius: 4px;
