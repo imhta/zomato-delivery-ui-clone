@@ -31,7 +31,9 @@ const ViewInMap = styled.div`
     cursor: pointer;
 `;
 function SponAndPopContainer() {
-  const { deliveryRestaurants } = SAP;
+  const {
+    deliveryRestaurants, dineOut, cafe, iceCream, pubBar,
+  } = SAP;
   return (
     <SponAndPopWrapper>
       <ViewInMap><span>View search result on map</span></ViewInMap>
@@ -41,6 +43,30 @@ function SponAndPopContainer() {
         subtitle={deliveryRestaurants.subtitle}
         icon={deliveryRestaurants.icon}
         hotels={deliveryRestaurants.hotels}
+      />
+      <SAPCard
+        title={dineOut.title}
+        subtitle={dineOut.subtitle}
+        icon={dineOut.icon}
+        hotels={dineOut.hotels}
+      />
+      <SAPCard
+        title={cafe.title}
+        subtitle={cafe.subtitle}
+        icon={cafe.icon}
+        hotels={cafe.hotels}
+      />
+      <SAPCard
+        title={iceCream.title}
+        subtitle={iceCream.subtitle}
+        icon={iceCream.icon}
+        hotels={iceCream.hotels}
+      />
+      <SAPCard
+        title={pubBar.title}
+        subtitle={pubBar.subtitle}
+        icon={pubBar.icon}
+        hotels={pubBar.hotels}
       />
     </SponAndPopWrapper>
   );
