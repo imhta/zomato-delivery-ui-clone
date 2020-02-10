@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Rating from './styled-component/Rating';
 import KeyValue from './styled-component/KeyValue';
 import ActionButton from './styled-component/ActionButton';
@@ -147,62 +148,137 @@ const Outlets = styled.div`
   }
 
 `;
-function RestaurantCard() {
+function RestaurantCard({
+  restaurant: {
+    mainImg,
+    isSponsored,
+    types,
+    name,
+    miniLocation,
+    rating,
+    votes,
+    address,
+    moreDetails,
+    availableActions,
+    hasOutlet, outlets,
+    noOfOutlets,
+  },
+}) {
   return (
     <RestaurantCardWrapper>
       <div className="main-card-wrapper">
         <CardHeader>
-          <img alt="title" src="https://b.zmtcdn.com/data/pictures/chains/7/46577/8b503cd43b786fc3be3dfa40fc3a2ca3_featured_v2.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A" />
+          <img alt="title" src={mainImg} />
           <TitleWrapper>
             <Title>
               <div className="title-content">
-                <p className="sponsored">SPONSORED</p>
-                <p className="type">QUICK BITES</p>
-                <h2 className="hotel-name">Afzal Restaurant</h2>
-                <p>Byculla</p>
+                {isSponsored ? <p className="sponsored">SPONSORED</p> : ''}
+                <p className="type">
+                  {types.map((type) => (
+                    <span>
+                      {type}
+                      ,
+                    </span>
+                  ))}
+                </p>
+                <h2 className="hotel-name">{name}</h2>
+                <p className="min-loc">{miniLocation}</p>
               </div>
               <div className="rating-wrapper">
-                <Rating rating="4.0" votes={1273} />
+                <Rating rating={rating} votes={votes} />
               </div>
             </Title>
-            <address>9 A, Opposite Sai Niketan Building, Shivdas Champsi Marg, Mazgao</address>
+            <address>{address}</address>
           </TitleWrapper>
         </CardHeader>
         <hr />
         <CardBody>
-          <KeyValue keyContent="CUISINES" valueContent="American, Mediterranean, Italian, European" />
-          <KeyValue keyContent="COST FOR TWO" valueContent="₹3,500" />
-          <KeyValue keyContent="HOURS" valueContent="8pm – 1am (Mon-Fri),12:30pm – 3:30pm, 8pm –..." />
-          <KeyValue keyContent="FEATURED IN" valueContent="Romantic" />
+          {moreDetails
+            .map(({ key, value }) => (<KeyValue keyContent={key} valueContent={value} />))}
         </CardBody>
       </div>
       <CardAction>
-        <ActionButton action="Call" icon="call" />
-        <ActionButton action="View Menu" icon="book" />
-        <ActionButton action="Book a Table" icon="calendar_today" textColor="#00AACD" />
-        <ActionButton action="Order" icon="shopping_cart" textColor="white" bgColor="#099E44" />
+        {availableActions.map(({
+          action, icon, textColor, bgColor, currentlyNotAvailable,
+        }) => (
+          <ActionButton
+            action={action}
+            icon={icon}
+            textColor={textColor || null}
+            bgColor={bgColor || null}
+            currentlyNotAvailable={currentlyNotAvailable || false}
+          />
+        ))}
+
       </CardAction>
-      <Outlets>
-        <p>11 more outlets in Mumbai</p>
-        <ul>
-          <li>
-            <img src="https://b.zmtcdn.com/data/pictures/chains/1/49261/369c96ad1a7886b403f23bd35303bca5.jpg?fit=around%7C100%3A100&crop=100%3A100%3B%2A%2C%2A" alt="aa" />
-            <div className="outlet-details">
-              <p className="outlet-title">Vashi Social</p>
-              <p className="outlet-location">Vashi</p>
-            </div>
-          </li>
-          <li>
-            <a href="#d">
-              See all outlets
-              <i className="material-icons">keyboard_arrow_right</i>
-            </a>
-          </li>
-        </ul>
-      </Outlets>
+      {hasOutlet
+        ? (
+          <Outlets>
+            <p>
+              {noOfOutlets}
+              {' '}
+              more outlets in Mumbai
+            </p>
+            <ul>
+              {outlets.map(({ location, outletImg }) => (
+                <li>
+                  <img src={outletImg} alt={`${name + location}`} />
+                  <div className="outlet-details">
+                    <p className="outlet-title">{name}</p>
+                    <p className="outlet-location">{location}</p>
+                  </div>
+                </li>
+              ))}
+              <li>
+                <a href="#d">
+                  See all outlets
+                  <i className="material-icons">keyboard_arrow_right</i>
+                </a>
+              </li>
+            </ul>
+          </Outlets>
+        )
+        : ''}
+
     </RestaurantCardWrapper>
 
   );
 }
+
+RestaurantCard.propTypes = {
+  restaurant: PropTypes.shape({
+    mainImg: PropTypes.string.isRequired,
+    isSponsored: PropTypes.bool.isRequired,
+    types: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    name: PropTypes.string.isRequired,
+    miniLocation: PropTypes.string.isRequired,
+    rating: PropTypes.string.isRequired,
+    votes: PropTypes.number.isRequired,
+    address: PropTypes.string.isRequired,
+    moreDetails: PropTypes.arrayOf(PropTypes.shape(
+      {
+        key: PropTypes.string.isRequired,
+        value: PropTypes.string.isRequired,
+      },
+    ).isRequired).isRequired,
+    availableActions: PropTypes.arrayOf(PropTypes.shape(
+      {
+        action: PropTypes.string.isRequired,
+        icon: PropTypes.string.isRequired,
+        textColor: PropTypes.string.isRequired,
+        bgColor: PropTypes.string.isRequired,
+        currentlyNotAvailable: PropTypes.bool,
+      },
+    ).isRequired).isRequired,
+    hasOutlet: PropTypes.bool.isRequired,
+    outlets: PropTypes.arrayOf(PropTypes.shape(
+      {
+        location: PropTypes.string.isRequired,
+        outletImg: PropTypes.string.isRequired,
+      },
+    ).isRequired).isRequired,
+    noOfOutlets: PropTypes.number.isRequired,
+  }).isRequired,
+};
 
 export default RestaurantCard;
