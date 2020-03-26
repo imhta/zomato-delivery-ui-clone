@@ -5,7 +5,7 @@ Zomato mumbai food delivery page ui clone built using react (built for education
 ## Built using
    - styled components 
    - React
-### :fire: [Clone](zomato-delivery.netlify.com)
+### :fire: [Clone](https://zomato-delivery.netlify.com)
 ## Get Started
 
 > Clone the project 
